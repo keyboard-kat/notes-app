@@ -2,8 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## This is a Notes App Project made with React-Redux, Material-UI, and basic CRUD operations using Mock.io 
 
-Dependencies for this proect are as follows: 
-Please refer to package.json for detaials
+Dependencies for this proect are as follows (Please refer to package.json for detaials): 
 
  "dependencies": {
     "@material-ui/core": "^4.2.1",
