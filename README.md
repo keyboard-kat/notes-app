@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## This is a Notes App Project made with React-Redux, Material-UI, and basic CRUD operations using Mock.io 
+## This is a Notes App Project made with React-Redux, Material-UI with basic CRUD operations using Mock.io endpoints
 
 Dependencies for this proect are as follows (Please refer to package.json for detaials): 
 
