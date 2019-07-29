@@ -21,8 +21,8 @@ Dependencies for this proect are as follows (Please refer to package.json for de
     "redux-thunk": "^2.3.0"
   },
   
-## To run this project locally clone this repo: 
- run 'yarn install' or 'npm install' on the command line to install all dependencies
+## To run this project locally:
+clone this repo & run 'yarn install' or 'npm install' on the command line to install all dependencies
 
 
 ## Available Scripts
