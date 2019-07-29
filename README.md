@@ -1,5 +1,31 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## This is a Notes App Project made with React-Redux, Material-UI, and basic CRUD operations using Mock.io 
+
+Dependencies for this proect are as follows: 
+Please refer to package.json for detaials
+
+ "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "material-ui": "^0.20.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^6.1.1",
+    "redux-thunk": "^2.3.0"
+  },
+  
+## To run this project locally clone this repo: 
+ run 'yarn install' or 'npm install' on the command line to install all dependencies
+
+
 ## Available Scripts
 
 In the project directory, you can run:
