@@ -1,7 +1,12 @@
 import React from "react";
-import Notes from "./Notes.jsx";
+import NotesList from "./NotesList.jsx";
+import { connect } from "react-redux";
+import { getAllNotes } from "../Actions/NotesActions";
 
 class LandingPage extends React.Component {
+  componentDidMount() {
+    this.props.getNotes();
+  }
   render() {
     return (
       <>
@@ -15,11 +20,28 @@ class LandingPage extends React.Component {
             borderRadius: 25
           }}
         >
-          <Notes />
+          <NotesList allNotes={this.props.notes} />
         </div>
       </>
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    getNotes: () => {
+      dispatch(getAllNotes());
+    }
+  };
+};
 
-export default LandingPage;
+const mapStateToProps = state => {
+  const { notes } = state.NotesReducer;
+  return {
+    notes
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LandingPage);

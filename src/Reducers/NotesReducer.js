@@ -7,7 +7,7 @@ export default function NotesReducer(state = initialState, action) {
     case "GET_ALL_NOTES_SUECCESS":
       return {
         ...state,
-        notes: action.notes[0]
+        notes: action.response
       };
 
     case "GET_ALL_NOTES_ERROR":
