@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -8,15 +8,10 @@ import IconButton from "@material-ui/core/IconButton";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-const NoteItem = props => {
-  const [header, setHeader] = useState(props.header);
-  const [content, setContent] = useState(props.content);
-  const [date, setDate] = useState(props.date);
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    !open ? setOpen(true) : setOpen(false);
-  };
+const NoteTextArea = () => {
+  const [header, setHeader] = useState(null);
+  const [content, setContent] = useState(null);
+  const [showButton, setShowButton] = useState(false);
 
   const handleChangeHeader = e => {
     setHeader(e.target.value);
@@ -24,42 +19,32 @@ const NoteItem = props => {
 
   const handleChangeContent = e => {
     setContent(e.target.value);
+    !showButton ? setShowButton(true) : setShowButton(false);
   };
 
   return (
     <>
       <ListItem
         button
-        onClick={handleClickOpen}
         style={{
           borderTopLeftRadius: "4px",
           borderTopRightRadius: "4px",
           backgroundColor: "rgba(0, 0, 0, 0.09)",
           minWidth: "95%",
-          maxHeight: "350px",
-          overflow: "auto"
+          maxHeight: "350px"
         }}
       >
         <ListItemText
           primary={
             <TextField
               fullWidth
-              label={date}
               value={header}
+              label={""}
               onChange={handleChangeHeader}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    {(open && handleChangeHeader) ||
-                    (open && handleChangeContent) ? (
-                      <IconButton>SAVE </IconButton>
-                    ) : (
-                      <></>
-                    )}
-
-                    <IconButton>
-                      <DeleteIcon />{" "}
-                    </IconButton>
+                    {showButton ? <IconButton>SAVE </IconButton> : <></>}
                   </InputAdornment>
                 )
               }}
@@ -68,16 +53,15 @@ const NoteItem = props => {
         />
       </ListItem>
 
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <TextField
-          multiline
-          fullWidth
-          value={content}
-          onChange={handleChangeContent}
-        />
-      </Collapse>
+      <TextField
+        multiline
+        fullWidth
+        rows="10"
+        value={content}
+        onChange={handleChangeContent}
+      />
     </>
   );
 };
 
-export default NoteItem;
+export default NoteTextArea;
