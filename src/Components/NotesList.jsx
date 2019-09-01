@@ -18,6 +18,7 @@ const NotesList = props => {
             <>
               <NoteItem
                 date={item.createdAt}
+                id={item.id}
                 header={item.subject}
                 content={item.content}
               />

@@ -4,6 +4,11 @@ const initialState = {
 
 export default function NotesReducer(state = initialState, action) {
   switch (action.type) {
+    case "GET_ALL_NOTES_LOADING":
+      return {
+        ...state,
+        notes: "loading"
+      };
     case "GET_ALL_NOTES_SUECCESS":
       return {
         ...state,
